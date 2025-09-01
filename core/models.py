@@ -6,17 +6,21 @@ from django.db import models
 # CLIENTE
 class Cliente(models.Model):
     id_cliente = models.IntegerField(primary_key=True)
-    cul_nombre = models.CharField(max_length=50)
-    cul_apellido = models.CharField(max_length=50)
-    cul_correo = models.CharField(max_length=50)
-    cul_telefono = models.CharField(max_length=15)
-    cul_direccion = models.CharField(max_length=100)
-    cul_region = models.CharField(max_length=50)
-    cul_postal = models.CharField(max_length=10)
-    cul_pais = models.CharField(max_length=50)
+    cli_nombre = models.CharField(max_length=50, verbose_name="Nombre" )
+    cli_apellido = models.CharField(max_length=50,verbose_name="Apellido")
+    cli_correo = models.CharField(max_length=50, verbose_name="Correo")
+    cli_telefono = models.CharField(max_length=15, verbose_name="Telefono")
+    cli_direccion = models.CharField(max_length=100, verbose_name="Direccion")
+    cli_region = models.CharField(max_length=50, verbose_name="Region")
+    cli_postal = models.CharField(max_length=10, verbose_name="Codigo Postal")
+    cli_pais = models.CharField(max_length=50, verbose_name="Pais")
 
     def __str__(self):
-        return f"{self.cul_nombre} {self.cul_apellido}"
+        return f"{self.cli_nombre} {self.cli_apellido}"
+    
+class Meta:
+        verbose_name = "Cliente"
+        verbose_name_plural = "Clientes"
 
 # ORDEN
 class Orden(models.Model):

@@ -10,7 +10,7 @@ from .models import (
 )
 
 class ClienteAdmin(admin.ModelAdmin):
-    list_display = ('cul_nombre', 'cul_correo')
+    list_display = ('cli_nombre', 'cli_correo')
 
 class OrdenAdmin(admin.ModelAdmin):
     list_display = ('id_orden', 'ord_fecha')
